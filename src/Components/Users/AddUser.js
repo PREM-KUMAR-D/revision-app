@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import "./AddUser.css";
 
-const AddUser = () => {
+const AddUser = (props) => {
 
   const [userName, setUserName] = useState("");
 
@@ -20,7 +20,8 @@ const AddUser = () => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    console.log(userName,age);
+
+    props.onAddUser(userName,age);
     
     setUserName("");
     setAge("");
