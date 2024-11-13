@@ -1,24 +1,23 @@
-import React from "react";
+// Write your code at relevant places in the code below:
 
+
+import Card from "../UI/Card";
+import "./AddUser.css";
 const AddUser = () => {
   const addUserHandler = (event) => {
-    console.log(event.target.username.value);
-    console.log(event.target.age.value);
- 
-
+    event.preventDefault();
   };
 
   return (
-    <form onSubmit={addUserHandler}>
-        <div>
-            <label htmlFor="username">UserName</label>
-            <input type="text" id="username" name="username"></input>
-            <label htmlFor="age">Age</label>
-            <input type="number" id="age" name="age"></input>
-        </div>
-
-      <button type="submit">Add User</button>
-    </form>
+    <Card  className="input">
+      <form onSubmit={addUserHandler}>
+        <label  htmlFor="username">Username</label>
+        <input id="username" type="text" />
+        <label htmlFor="age">Age</label>
+        <input id="age" type="number" />
+        <button type="submit">Add User</button>
+      </form>
+    </Card>
   );
 };
 
